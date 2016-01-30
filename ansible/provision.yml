@@ -1,0 +1,34 @@
+---
+- hosts: all
+  sudo: yes
+  pre_tasks:
+  - name: Update all packages
+    yum: name=* state=latest
+  roles:
+    # Absolutely needed roles
+     - andrewrothstein.docker
+     - andrewrothstein.docker-compose
+#    - geerlingguy.git
+#    - geerlingguy.postfix
+#    - geerlingguy.apache
+#    - geerlingguy.memcached
+#    - geerlingguy.mysql
+#    - geerlingguy.php
+#    - geerlingguy.php-pecl
+#    - geerlingguy.php-mysql
+#    - geerlingguy.php-memcached
+#    - geerlingguy.composer
+#    - geerlingguy.drush
+#    - geerlingguy.java
+#    - geerlingguy.solr
+    #- geerlingguy.varnish
+    # Conditional roles
+#    - { role: geerlingguy.php-xdebug, when: '"xdebug" in installed_extras' }
+#    - { role: geerlingguy.daemonize, when: '"mailhog" in installed_extras' }
+#    - { role: geerlingguy.mailhog, when: '"mailhog" in installed_extras' }
+#    - { role: geerlingguy.pimpmylog, when: '"pimpmylog" in installed_extras' }
+    #- { role: geerlingguy.nodejs, when: '"nodejs" in installed_extras' }
+    #- { role: geerlingguy.ruby, when: '"ruby" in installed_extras' }
+    # Other
+#    - arknoll.selenium
+#    - project-extra

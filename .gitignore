@@ -1,5 +1,7 @@
 .idea
+.vagrant
 composer.phar
 composer.lock
 phpunit.xml
+ansible/roles/
 vendor/
