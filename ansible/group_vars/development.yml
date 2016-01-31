@@ -20,7 +20,7 @@ project:
 #
 
 apache_vhosts:
-  - servername: "sug.music"
+  - servername: "dev.sug.music"
     documentroot: "{{ project.root }}/public"
     #extra_parameters: "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000{{ project.root }}/web/$1"
 

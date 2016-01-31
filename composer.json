@@ -1,12 +1,12 @@
 {
-    "name": "zendframework/zend-expressive-skeleton",
-    "type": "project",
-    "homepage": "https://github.com/zendframework/zend-expressive-skeleton",
+    "name": "back-2-95/sug",
+    "type": "website",
+    "homepage": "https://github.com/back-2-95/sug",
     "license": "BSD-3-CLAUSE",
     "authors": [
         {
-            "name": "Geert Eltink",
-            "homepage": "https://xtreamwayz.com/"
+            "name": "Marko Korhonen",
+            "homepage": "https://github.com/back-2-95"
         }
     ],
     "extra": {
