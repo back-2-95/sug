@@ -1,0 +1,31 @@
+ansible_ssh_private_key_file: ~/.vagrant.d/insecure_private_key
+ansible_ssh_user: vagrant
+
+#
+# PROJECT
+#
+
+project:
+  # Root of repository
+  root: /vagrant/sug
+  # Env to use for build.sh
+  site_env: development
+  # Repository to use with branch / tag
+  repo:
+    url: git@github.com:back-2-95/sug.git
+    version: master
+
+#
+# APACHE
+#
+
+apache_vhosts:
+  - servername: "sug.music"
+    documentroot: "{{ project.root }}/public"
+    #extra_parameters: "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000{{ project.root }}/web/$1"
+
+#
+# PHP
+#
+
+

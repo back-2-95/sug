@@ -2,25 +2,28 @@
 - hosts: all
   sudo: yes
   pre_tasks:
-  - name: Update all packages
+  - name: update all packages
     yum: name=* state=latest
+  - name: install python-pip
+    yum: name=python-pip state=latest
+  - name: install docker-py
+    pip: name=docker-py
   roles:
     # Absolutely needed roles
-     - andrewrothstein.docker
-     - andrewrothstein.docker-compose
-#    - geerlingguy.git
-#    - geerlingguy.postfix
-#    - geerlingguy.apache
+    - andrewrothstein.docker
+    - andrewrothstein.docker-compose
+    - ansible-role-mongodb-container
+    - geerlingguy.repo-epel
+    - geerlingguy.repo-remi
+    - geerlingguy.git
+    - geerlingguy.apache
 #    - geerlingguy.memcached
 #    - geerlingguy.mysql
-#    - geerlingguy.php
+    - geerlingguy.php
 #    - geerlingguy.php-pecl
 #    - geerlingguy.php-mysql
 #    - geerlingguy.php-memcached
-#    - geerlingguy.composer
-#    - geerlingguy.drush
-#    - geerlingguy.java
-#    - geerlingguy.solr
+    - geerlingguy.composer
     #- geerlingguy.varnish
     # Conditional roles
 #    - { role: geerlingguy.php-xdebug, when: '"xdebug" in installed_extras' }

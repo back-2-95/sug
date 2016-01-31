@@ -3,5 +3,7 @@
 composer.phar
 composer.lock
 phpunit.xml
-ansible/roles/
+ansible/roles/andrewrothstein*
+ansible/roles/ansible-role-mongodb-container
+ansible/roles/geerlingguy*
 vendor/

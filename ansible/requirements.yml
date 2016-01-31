@@ -1,3 +1,11 @@
 ---
 - src: andrewrothstein.docker
 - src: andrewrothstein.docker-compose
+- name: ansible-role-mongodb-container
+  src: https://github.com/back-2-95/ansible-role-mongodb-container
+- src: geerlingguy.repo-epel
+- src: geerlingguy.repo-remi
+- src: geerlingguy.git
+- src: geerlingguy.apache
+- src: geerlingguy.php
+- src: geerlingguy.composer

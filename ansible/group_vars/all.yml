@@ -1,0 +1,1 @@
+php_enablerepo: "remi-php70,epel"
