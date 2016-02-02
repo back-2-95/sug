@@ -12,6 +12,7 @@
     # Absolutely needed roles
     - andrewrothstein.docker
     - andrewrothstein.docker-compose
+    #- letsencrypt
     - ansible-role-mongodb-container
     - geerlingguy.repo-epel
     - geerlingguy.repo-remi
@@ -35,3 +36,14 @@
     # Other
 #    - arknoll.selenium
 #    - project-extra
+  post_tasks:
+  - name: install needed packages
+    yum: name={{ item }} state=latest
+    with_items:
+    - gcc
+    - php-pear
+    - php-devel
+  - name: install php-mongo
+    command: "pecl install mongodb"
+  - name: add mongo extension to php.ini configuration
+    lineinfile: dest=/etc/php.ini line="extension=mongodb.so" state=present

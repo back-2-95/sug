@@ -14,7 +14,8 @@ class HomePageFactory
         $template = ($container->has(TemplateRendererInterface::class))
             ? $container->get(TemplateRendererInterface::class)
             : null;
-
-        return new HomePageAction($router, $template);
+        $mongodb = $container->get('MongoDb');
+//echo get_class($mongodb); exit;
+        return new HomePageAction($router, $template, $mongodb);
     }
 }
