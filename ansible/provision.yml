@@ -10,7 +10,7 @@
     pip: name=docker-py
   roles:
     # Absolutely needed roles
-    - andrewrothstein.docker
+#    - andrewrothstein.docker
     - andrewrothstein.docker-compose
     #- letsencrypt
     - ansible-role-mongodb-container
@@ -43,7 +43,14 @@
     - gcc
     - php-pear
     - php-devel
+    - openssl-devel
+  - name: determine php extensions directory
+    shell: php -i | grep -i '^extension_dir' | awk '{print $3}'
+    register: php_extension_dir
+
   - name: install php-mongo
-    command: "pecl install mongodb"
+    action: command pecl install mongodb creates={{php_extension_dir.stdout_lines[0]}}/mongodb.so
+
   - name: add mongo extension to php.ini configuration
     lineinfile: dest=/etc/php.ini line="extension=mongodb.so" state=present
+    notify: restart apache
