@@ -55,5 +55,6 @@ Vagrant.configure(2) do |config|
     ansible.playbook = 'ansible/provision.yml'
     ansible.inventory_path = 'ansible/inventory/development'
     ansible.limit = 'all'
+    #ansible.verbose = "vvv"
   end
 end
