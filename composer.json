@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "php": "^5.5 || ^7.0",
+        "php": "^7.0",
         "roave/security-advisories": "dev-master",
         "zendframework/zend-expressive": "~1.0.0@rc || ^1.0",
         "zendframework/zend-expressive-helpers": "^2.0",
@@ -26,7 +26,7 @@
         "ocramius/proxy-manager": "^1.0",
         "zendframework/zend-expressive-twigrenderer": "^1.0",
         "league/flysystem": "^1.0",
-        "mongodb/mongodb": "^1.0"
+        "back-2-95/php-mongodb-crud": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -43,6 +43,8 @@
             "AppTest\\": "test/AppTest/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "check": [
             "@cs",
