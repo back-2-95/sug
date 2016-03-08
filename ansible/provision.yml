@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  sudo: yes
+  become: yes
   pre_tasks:
   - name: update all packages
     yum: name=* state=latest
@@ -10,7 +10,7 @@
     pip: name=docker-py
   roles:
     # Absolutely needed roles
-#    - andrewrothstein.docker
+    - andrewrothstein.docker
     - andrewrothstein.docker-compose
     #- letsencrypt
     - ansible-role-mongodb-container

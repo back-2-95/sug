@@ -9,7 +9,7 @@ class Mongodb
 {
     public function __invoke($services)
     {
-        $config  = $services->get('Config');
+        $config  = $services->get('config');
         $config  = $config['mongodb'];
         $uri = $config['uri'];
 
