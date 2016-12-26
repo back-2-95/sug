@@ -2,12 +2,12 @@
 
 namespace App\Factory;
 
-use League\Flysystem\Exception;
+use Interop\Container\ContainerInterface;
 use MongoDB\Client;
 
 class Mongodb
 {
-    public function __invoke($services)
+    public function __invoke(ContainerInterface $services)
     {
         $config  = $services->get('config');
         $config  = $config['mongodb'];
